@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-image: URL("https://i.pinimg.com/originals/ea/89/45/ea8945b986e784d57c11ba50839b4f12.gif");
+            background-color: #8f8e8e;
+            background-repeat: repeat; 
+            background-size: contain;  
+            background-size: 33%;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ::placeholder {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: medium;
+        }
+        .login-container {
+            background-color: white;
+            border-style: dotted;
+            display: contents;
+            width: fit-content; 
+        }
+        form {
+            border: 2px solid rgb(88, 86, 86);
+            border-radius: 10px;
+            border-style: outset;
+            width: fit-content; 
+            background-color: white;
+            padding: 0px 20px;
+            margin: 130px;
+            margin-left: 540px;
+            margin-top: 50px;
+        }
+        .login-container img {
+            height: 180px;
+            width: 400px;
+        }
+        .login-container input[type=text], [type=password] {
+            width: 90%;
+            height: 30px;
+            border-color: darkgrey;
+            border-radius: 20px;
+            padding-left: 5%;
+        }
+        .login-container text {
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 2%;
+        }
+        .login-container input[type=checkbox] {
+            width: 15px;
+            height: 15px;
+        }
+        .login-container button {
+            background-color: white;
+            color: black;
+            padding: 14px 20px;
+            margin-left: 110px;
+            border: 2px solid black;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 40%;
+        }
+        button:hover {
+            background-color: rgb(66, 66, 231);
+            color: white;
+            text-decoration: underline;
+        }
+        button:active {
+            cursor: progress;
+        }
+        a:active {
+            cursor: progress;
+        }
+        a:hover {
+            font-size: 130%;
+        }
+        a {
+            display: inline-block;
+            margin-right: 10px; 
+        }
+        .lang {
+            display: flex;
+            margin-left: 90px;
+        }
+        video {
+            margin: 100px;
+            max-width: fit-content;
+            max-height: fit-content;
+            margin-left: 350px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <form id="loginForm">
+        <div class="login-container">
+            <img src="https://logos-world.net/wp-content/uploads/2020/04/Instagram-Logo-2015-2016.png" alt="instagram">
+            <br>
+            <div class="log-block">
+                <h3>Username*</h3>
+                <input type="text" placeholder="Enter Username" id="User" required>
+                <h3>Password*</h3>
+                <input type="password" placeholder="Enter Password" id="Pass" required>
+                <br><br>
+                <label><input type="checkbox" onclick="Show()"><span style="font-size: 110%;">Show Password</span></label>
+                <br><br>
+                <button type="button" onclick="validateLogin()"><span style="font-family: 'Times New Roman', Times, serif">LOGIN</span></button>
+                <br>
+                <p align="center">Forget <a href="#">Password?</a></p>
+                <p align="center">Don't Have an Account? <a href="#">Sign up</a></p> <br>
+                <div class="lang">
+                    <p align="center"><a href="#">తెలుగు</a></p>
+                    <p align="center"><a href="#">हिन्दी</a></p>
+                    <p align="center"><a href="#">தமிழ்</a></p>
+                    <p align="center"><a href="#">മലയാളം</a></p>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- Success Page -->
+    <div id="successPage" style="display: none;">
+        <video poster="https://i.pinimg.com/originals/30/7f/2c/307f2c75edf56e65b1517978ced5f081.gif" loop>
+            <source src="https://i.pinimg.com/originals/30/7f/2c/307f2c75edf56e65b1517978ced5f081.gif" type="video/gif">
+        </video>
+    </div>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('User').value;
+            const password = document.getElementById('Pass').value;
+            const correctUsername = 'Kvteja';
+            const correctPassword = 'Teja';
+
+            if (username === correctUsername && password === correctPassword) {
+                document.querySelector('form').style.display = 'none';
+                document.getElementById('successPage').style.display = 'block';
+                setTimeout(function() {
+                    window.location.href = "color pallete.html";
+                }, 3000);
+            } else {
+                alert('Invalid username or password');
+            }
+        }
+
+        function Show() {
+            var x = document.getElementById("Pass");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>
